@@ -1,0 +1,5 @@
+#landing {
+  height: inherit;
+  background: url("./../../res/images/landing.jpg");
+  background-size: contain;
+}
