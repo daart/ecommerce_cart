@@ -1,11 +1,19 @@
 import React from 'react';
 
-export const SignoutBtn = ({ signOutHandler }) => {
+import { auth } from './../firebase';
+
+const { signOut } = auth;
+
+const signOutHandler = () => {
+  
+}
+
+export const SignoutBtn = () => {
   return (
     <div className="btn signout">
       <button
         type="button"
-        onClick={ signOutHandler }
+        onClick={ signOut }
       >
         SignOut
       </button>

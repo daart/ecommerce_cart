@@ -27,14 +27,14 @@ export const LoginForm = ({ history, location }) => {
       let { user } = serverResponse;
       let { from } = location.state || { from: { pathname: "/home" } };
 
-      console.log('successfull login, userData -> ', user);
+      // console.log('successfull login, userData -> ', user);
 
       history.replace(from);
       
       return null
 
     } catch (err) {
-      console.log('failed to login! -> ', err);
+      // console.log('failed to login! -> ', err);
       return err
     }
 

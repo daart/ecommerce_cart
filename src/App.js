@@ -17,10 +17,11 @@ import {
 // Components
 import { LoginForm } from './components/LoginForm';
 import { RegisterForm } from './components/RegisterForm';
-import { Header } from './components/Header';
+import { Navigation } from './components/Navigation';
 import { Landing } from './screens/landing';
 import { Home } from './screens/home';
 import { ProtectedRoute } from './common/ProtectedRoute';
+import { withAuthentication } from "./components/withAuthentication";
 
 const { getCurrentlySignedInUser } = auth;
 
@@ -30,7 +31,7 @@ const { getCurrentlySignedInUser } = auth;
 // @observer
 const App = ({ isAuthenticated }) => {
   return <div className="App">
-      <Header />
+      <Navigation />
       App@
       <Switch>
         <Route exact path={LANDING} component={Landing} />
@@ -42,4 +43,4 @@ const App = ({ isAuthenticated }) => {
     </div>;
 }
 
-export default withRouter(App);
+export default withRouter(withAuthentication(App));
